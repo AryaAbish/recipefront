@@ -1,0 +1,29 @@
+<!-- main -->
+<div class="row">
+        <a class="text-warning font fs-3 ms-5" href=""><strong>My Recipe Book</strong></a>
+    <div class="col-6">
+        <div class="container w-50">
+            <h1 class="text-center m-5 text-warning">Registration Here</h1>
+            <form [formGroup]="registerModelform">
+                <input formControlName="uname" class="text form-control m-2 p-2" type="text" name="Username" placeholder="Username" required="">
+                <p *ngIf="registerModelform.get('uname')?.errors && registerModelform.get('uname')?.touched"
+                                class="text-danger">Accept letters and numbers only</p>
+        
+                <input formControlName="psw" class="text form-control m-2 p-2" type="password" name="password" placeholder="Password" required="">
+                <p *ngIf="registerModelform.get('psw')?.errors && registerModelform.get('psw')?.touched"
+                class="text-danger">Accept letters and numbers only</p>
+        
+                <input formControlName="cpsw" class="text form-control m-2 p-2" type="password" name="password" placeholder="Confirm Password" required="">
+                <!-- <p *ngIf="registerModelform.get('cpsw')?.errors && registerModelform.get('cpsw')?.touched"
+                class="text-danger bg-white">Accept letters and numbers only</p> -->
+                <p *ngIf="pswMatch" class="text-danger">Password doesn't match</p>
+        
+                <div class="text-end">
+                    <button (click)="signup()" class="btn p-2 " type="submit">Signup</button>
+                </div>
+            </form>
+            <p class="text-warning">Don't have an Account? <a href="login"> Login Now!</a></p>
+        </div>
+    </div>
+    <div class="col-6"></div>
+</div>

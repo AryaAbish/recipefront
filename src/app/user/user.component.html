@@ -1,0 +1,93 @@
+ <!-- Navigation-->
+ <nav class="navbar navbar-expand-lg navbar-light bg-black">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand text-warning fs-3 font" href=""><strong>My Recipe Book</strong></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
+           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <input [(ngModel)]="searchTerm" (keyup)="search($event)" class="form-control ms-5 w-50" type="text" placeholder="Search">
+            <button class="btn text-warning"><i class="fa-solid fa-magnifying-glass"></i></button> 
+            <li class="nav-item"><button (click)="myprofile()" class="nav-link text-warning" >Profile</button></li> 
+            <li class="nav-item"><button (click)="viewwishlist()" class="nav-link text-warning" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">Saved</button></li> 
+            <li class="nav-item"><button data-bs-toggle="modal" data-bs-target="#exampleModal" class="nav-link text-warning">Message</button></li> 
+                <li class="nav-item"><button (click)="logout()" class="nav-link text-warning">Logout</button></li>
+            </ul>
+        </div>
+    </div>
+  </nav>
+
+<!-- Section-->
+<section class="py-5">
+  <h1 class="text-warning font ms-5">Welcome {{user}}</h1>
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+            <div *ngFor="let i of allrecipies | search: searchKey :'rname' " class="col mb-5">
+                <div class="card h-100 bg-black">
+                    <!-- Product image-->
+                    <img class="card-img-top w-100" src="{{i.img}}" alt="..." style="height: 200px;" />
+                    <!-- Product details-->
+                    <div class="card-body p-4 text-white">
+                        <div class="text-center">
+                            <!-- Product name-->
+                            <h5 class="fw-bolder">{{i.rname}}</h5>
+                            <!-- Product price-->
+                            Prep time: {{i.dur}}
+                        </div>
+                    </div>
+                    <!-- Product actions-->
+                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                        <div class="text-center"><a href="userview/{{i.rname}}" class="btn btn-outline-light mt-auto text-warning">View More...</a></div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            </div>
+            </section>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content bg-black text-white">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Send Message</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <textarea [(ngModel)]="message" name="message" id="message" cols="60" rows="5"></textarea>
+        </div>
+        <div class="modal-footer">
+          <button (click)="sendmessage()" type="button" class="btn btn-success" data-bs-dismiss="modal">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="offcanvas offcanvas-start bg-black" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title text-warning"  id="offcanvasExampleLabel">My Wishlist</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <div>
+        <div *ngFor="let i of saved" class="card mt-2 bg-black" style="width: 18rem;">
+          <h5 class="card-title text-white">{{i.rname}}
+            <span class="card-body">
+<div class="text-end">
+                <button (click)="deletewishlist(i.rname)" class="btn"><i class="fa-solid fa-trash-can" style="color: #f8300d;"></i></button>
+  
+</div>            </span>
+          </h5>
+<div (click)="viewitem(i.rname)">
+              <img src={{i.img}} class="card-img-top w-100" alt="..." style="height: 150px;">
+</div>          
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+

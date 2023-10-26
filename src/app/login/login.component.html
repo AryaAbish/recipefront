@@ -1,0 +1,38 @@
+<!-- Responsive navbar-->
+<!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand text-warning" href="">My Recipe Book</a>
+    </div>
+</nav> -->
+
+
+<!-- main -->
+   <div class="main" style="background-image: url(https://images.creativemarket.com/0.1.0/ps/7353024/1820/965/m1/fpnw/wm1/ahp0l9ecx0vfwsdo1rwxcdtynfyzn4gweomwnblntp5glupfrmnapoab88tzxyjd-.jpg?1574572829&s=b8ffc3e573cf00451539ee4b954ba3c0); width: 100%;">
+<div class="text-end me-5">
+        <a class="text-warning font fs-3" href=""><strong>My Recipe Book</strong></a>
+    
+</div>        <div class="row mt-5">
+            <div class="col-6">
+            </div>
+            <div class="col-6">
+                <div class="container w-50 my-5">
+                    <h1 class="text-center text-warning">Login</h1>
+                    <form [formGroup]="loginModelform">
+                        <input formControlName="uname" class="text form-control m-2 p-2" type="text" name="Username" placeholder="Username" required="">
+                        <p *ngIf="loginModelform.get('uname')?.errors && loginModelform.get('uname')?.touched"
+                        class="text-danger">Accept letters and numbers only</p>
+                
+                        <input formControlName="psw" class="text form-control m-2 p-2" type="password" name="password" placeholder="Password" required="">
+                        <p *ngIf="loginModelform.get('psw')?.errors && loginModelform.get('psw')?.touched"
+                        class="text-danger">Accept letters and numbers only</p>
+                
+                        <div class="text-end">
+                            <button (click)="login()" class="btn p-2" type="submit">Sign In</button>
+                        </div>
+                    </form>
+                    <p class="text-warning">Don't registered? <a href="register"> Register Now!</a></p>
+                </div>
+            </div>
+        </div>
+    
+   </div>

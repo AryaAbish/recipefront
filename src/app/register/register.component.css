@@ -1,0 +1,39 @@
+input{
+    border-radius: 20px;
+    border-color: orange;  
+    background: none;  
+    color: white;
+    }
+    ::placeholder{
+        color: orange;
+    }
+    button{
+        background-color: orange;
+    }
+    button:hover{
+        background-color:black;
+        color: orange;
+    }
+    h1{
+        font-family:  serif;
+    }
+    input:hover{
+        border-color: green;
+    }
+    a{
+        color: orange;
+    }
+    a:hover{
+        color: white;
+    }
+    .row{
+        height: 100vh;
+        background-image: url('https://wallpapercave.com/wp/wp8947204.jpg');
+    }
+    .container{
+        border-radius: 50px 15px;
+    }
+    input:focus{
+        background: none;
+        color: white;
+    }

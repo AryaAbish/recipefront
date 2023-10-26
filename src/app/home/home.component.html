@@ -1,0 +1,76 @@
+<!-- Responsive navbar-->
+<nav class="navbar navbar-expand-lg navbar-dark bg-black">
+  <div class="container">
+    <a class="navbar-brand text-warning fs-3 font" href=""><strong>My Recipe Book</strong></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+        class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <a href="" class="nav-item"><a class="nav-link active text-warning" aria-current="page">Home</a>
+        </a>
+        <li class="nav-item"><a class="nav-link text-white" routerLink="register">Register</a></li>
+        <li class="nav-item"><a class="nav-link text-white" routerLink="login">Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="test">
+  <a href="#section"><img src="https://th.bing.com/th/id/R.dd5d9fbdd03a3b47d21baa8633231e67?rik=a3iMyOmV0XwEwA&riu=http%3a%2f%2fwww.baltana.com%2ffiles%2fwallpapers-2%2fFood-HD-Wallpapers-04864.jpg&ehk=oCGq87EnzGa53wpyGPk3aNhI03hKYPPWLQVzqCKdPe0%3d&risl=&pid=ImgRaw&r=0"
+      alt="" style="opacity: 0.5; width: 100%;"></a>
+  <div class="centered fs-1">
+    <h5>Welcome to my Recipies</h5>
+    Eat Healthy
+  </div>
+</div>
+
+<div id="section" style="background-color: black;">
+  <div class="container w-50">
+    <div class="row text-center">
+      <div class="col-3">
+        <img (click)="filterCategory('')" class="cat"
+          src="https://th.bing.com/th/id/OIP.-Yyvp72aoLShDLLKl_-K0AAAAA?pid=ImgDet&rs=1" alt="" style="opacity: 0.5; width: 100%; border-radius: 50%;">
+      </div>
+      <div class="col-3">
+        <img (click)="filterCategory('1')" class="cat"
+          src="https://thumbs.dreamstime.com/b/vector-logo-vegetarian-food-black-badge-juicy-salad-glass-transparent-bowl-brush-lettering-words-cooked-different-143497247.jpg"
+          alt="" style="opacity: 0.5; width: 100%; border-radius: 50%;">
+      </div>
+      <div class="col-3">
+        <img (click)="filterCategory('2')" class="cat"
+          src="https://th.bing.com/th/id/OIP.d6qTLZP9ydotzleYnmdUPQHaHE?pid=ImgDet&w=203&h=193&c=7&dpr=1.3" alt=""
+          style="opacity: 0.5; width: 100%; border-radius: 50%;">
+      </div>
+      <div class="col-3">
+        <img (click)="filterCategory('3')" class="cat"
+          src="https://th.bing.com/th/id/OIP.gRgbQtxACVe5fxCAHclepgHaHa?pid=ImgDet&rs=1" alt="" style="opacity: 0.5; width: 100%; border-radius: 50%;">
+      </div>
+    </div>
+  </div>
+  
+  <!-- Section-->
+  <section class="py-5 bg-black">
+    <div class="container px-4 px-lg-5 mt-5">
+      <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        <div *ngFor="let i of filterrecipies" class="col mb-5">
+          <div class="card h-100 bg-black text-white">
+            <!-- Product image-->
+            <img class="card-img-top w-100" src="{{i.img}}" alt="..." style="height: 200px;" />
+            <!-- Product details-->
+            <div class="card-body p-4">
+              <div class="text-center">
+                <!-- Product name-->
+                <h5 class="fw-bolder">{{i.rname}}</h5>
+              </div>
+            </div>
+            <!-- Product actions-->
+            <div class="card-footer p-4 pt-0 border-top-0">
+              <div class="text-center"><a routerLink="login" class="btn mt-auto text-warning btn-outline-light">View More...</a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

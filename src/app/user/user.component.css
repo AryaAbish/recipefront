@@ -1,0 +1,12 @@
+section{
+    background-color: black;
+}
+input{
+    margin: 15px;
+}
+.c{
+    visibility: hidden;
+}
+::placeholder{
+    color: orange;
+}

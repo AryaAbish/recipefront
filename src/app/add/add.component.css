@@ -1,0 +1,22 @@
+.main{
+    height: 100vh;
+}
+input,textarea{
+    border-radius: 20px;
+    border-color: orange;    
+}
+::placeholder{
+    color: orange;
+    }
+h1{
+    font-family:  serif;
+}
+input:hover{
+    border-color: green;
+}
+textarea:hover{
+    border-color: green;
+}
+textarea{
+    height: 200px;
+}

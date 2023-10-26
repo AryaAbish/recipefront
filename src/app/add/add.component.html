@@ -1,0 +1,64 @@
+<!-- Navigation-->
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-black">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand text-warning" href="">My Recipies</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><button (click)="logout()" class="nav-link text-warning bg-black">Logout</button></li>
+            </ul>
+        </div>
+    </div>
+  </nav> -->
+
+
+<!-- main -->
+<div class="main" style="background-image: url(https://th.bing.com/th/id/OIP.7DXfW8r7SGMOZp_CSG8HdwHaE8?pid=ImgDet&rs=1); opacity:0.8">
+    <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand text-warning fs-3 font" href=""><strong>My Recipie Book</strong></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><button (click)="logout()" class="nav-link text-warning">Logout</button></li>
+            </ul>
+        </div>
+    </div>
+  </nav>
+    
+    <div class="container w-50">
+        <h1 class="text-center text-warning">Add Recipes</h1>
+        <form [formGroup]="addrecipeform">
+            <input formControlName="rname" class="text form-control m-2 p-2" type="text" name="Recname" placeholder="Recipename">
+            <p *ngIf="addrecipeform.get('rname')?.errors && addrecipeform.get('rname')?.touched"
+            class="text-danger bg-white">Accept letters and numbers only</p>
+    
+            <input formControlName="no" class="text form-control m-2 p-2" type="text" id="no" name="number" placeholder="Number of serves">
+            <p *ngIf="addrecipeform.get('no')?.errors && addrecipeform.get('no')?.touched"
+            class="text-danger bg-white">Accept letters only</p>
+
+            <input formControlName="dur" class="text form-control m-2 p-2" type="text" id="dur" name="dur" placeholder="Prep time">
+            <p *ngIf="addrecipeform.get('dur')?.errors && addrecipeform.get('dur')?.touched"
+            class="text-danger bg-white">Accept letters and numbers only</p>
+
+            <textarea formControlName="des" class="text form-control m-2 p-2" type="des" id="desc" name="desc" placeholder="Recipe description"></textarea>
+            <p *ngIf="addrecipeform.get('des')?.errors && addrecipeform.get('des')?.touched"
+            class="text-danger bg-white">Accept letters and numbers only</p>
+    
+            <input formControlName="img" class="text form-control m-2 p-2" type="no" id="image" name="image" placeholder="Image">
+            <p *ngIf="addrecipeform.get('img')?.errors && addrecipeform.get('img')?.touched"
+            class="text-danger bg-white">Accept url only</p>
+
+            <input formControlName="cat" class="text form-control m-2 p-2" type="no" id="image" name="image" placeholder="catagory">
+            <p *ngIf="addrecipeform.get('cat')?.errors && addrecipeform.get('cat')?.touched"
+            class="text-danger bg-white">Accept number only</p>
+    
+            <div class="text-end">
+                <button (click)="addrecipe()" class="btn p-2 bg-success" type="submit">Add</button>
+                <button (click)="back()" class="btn p-2 m-3 bg-warning" type="submit">Back</button>
+    
+            </div>
+        </form>
+    </div>
+</div>
+

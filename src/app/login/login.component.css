@@ -1,0 +1,35 @@
+input{
+border-radius: 20px;
+border-color: orange;  
+color: white;
+background: none;
+}
+::placeholder{
+    color: orange;
+}
+button{
+    background-color: orange;
+}
+button:hover{
+    background-color:black;
+    color: orange;
+}
+h1{
+    font-family:  serif;
+}
+a{
+    color: orange;
+}
+a:hover{
+    color: white;
+}
+.row{
+    height: 100vh;
+}
+.container{
+    border-radius: 50px 15px;
+}
+input:focus{
+    color: white;
+    background: none;
+}

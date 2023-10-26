@@ -1,0 +1,84 @@
+
+ <!-- Navigation-->
+ <nav class="navbar navbar-expand-lg navbar-light bg-black">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand text-warning fs-3 font" href=""><strong>My Recipie Book</strong></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><button (click)="logout()" class="nav-link text-warning" href="">Logout</button></li>
+            </ul>
+        </div>
+    </div>
+  </nav>
+
+  <!-- <div class="card mx-auto mt-3" style="width: 50%;">
+    <img src="{{rdetail.img}}" class="card-img-top" alt="..." style="height: 300px;">
+    <div class="card-body">
+      <h5 class="card-title text-center">{{rdetail.rname}}</h5>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">No of Serves: {{rdetail.no}}</li>
+      <li class="list-group-item">Prep time: {{rdetail.dur}}</li>
+      <li class="list-group-item">{{rdetail.des}}</li>
+<div class="text-end">
+        <li class="list-group-item">
+          <a href="edit/{{rdetail.rname}}" class="btn btn-warning">Edit</a>
+          <a (click)="delete()" class="btn btn-warning mx-2">Delete</a>
+        </li>
+</div>   
+<li class="list-group-item text-primary">
+  <h3>Comments</h3>
+  <input [(ngModel)]="com" type="text" class="form-control">
+  <div class="text-end">
+    <button (click)="submitcomment()"  class="btn btn-small bg-success text-white mt-2">Comment</button>
+  </div>
+</li>
+<div *ngFor="let i of comment">
+ <div class="row">
+  <div class="col-10">  
+    <li class="list-group-item">
+      <span class="text-primary">{{i.uname}}:</span>{{i.comment}}</li>
+  </div>
+  <div class="col-2"><button (click)="deletecomment(i.uname,i.comment)" class="btn"><i class="fa-solid fa-trash-can" style="color: #eb1e1e;"></i></button></div>
+ </div>
+</div>
+  </ul>
+  </div> -->
+
+  <div class="main bg-black">
+    <div class="row container">
+      <div class="col-6">
+        <img src="{{rdetail.img}}" class="card-img-top" alt="..." style="height: 500px;">
+      </div>
+      <div class="col-6">
+        <h1 class="text-center text-success font"><strong>{{rdetail.rname}}</strong></h1>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item bg-black text-white">No of Serves: {{rdetail.no}}</li>
+          <li class="list-group-item bg-black text-white">Prep time: {{rdetail.dur}}</li>
+          <li class="list-group-item bg-black text-white">{{rdetail.des}}</li>
+            </ul>
+            <div class="text-end">
+              <li class="list-group-item">
+                <a href="edit/{{rdetail.rname}}" class="btn btn-warning">Edit</a>
+                <a (click)="delete()" class="btn btn-warning mx-2">Delete</a>
+              </li>
+      </div>   
+            <br>
+            <h3 class="text-white">Comments <div class="text-end">
+            </div> </h3>
+            <input [(ngModel)]="com" type="text" class="form-control">
+            <div class="text-end">
+              <button (click)="submitcomment()"  class="btn btn-small bg-success text-white mt-2">Comment</button>
+            </div>
+    <div *ngFor="let i of comment">
+            <div class="row m-2">
+              <div class="col-2 text-primary">{{i.uname}}:</div>
+              <div class="col-9 text-white">{{i.comment}}</div>
+              <div (click)="deletecomment(i.uname,i.comment)" class="col-1 text-danger"><i class="fa-solid fa-trash-can"></i></div>
+            </div>
+    </div>  
+      </div>
+    </div>
+  </div>
+  

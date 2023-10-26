@@ -1,0 +1,39 @@
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-light bg-black">
+    <div class="container px-4 px-lg-5">
+        <a class="navbar-brand text-warning" href="">My Recipies</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <a class="nav-item"><button (click)="logout()" class="nav-link bg-black text-warning">Logout</button></a>
+                <!-- <li class="nav-item"><a class="nav-link text-warning" href="">Login</a></li> -->
+            </ul>
+        </div>
+    </div>
+  </nav>
+
+<!-- main -->
+<div class="he" style="background-image: url(https://i.postimg.cc/Pq0T41qp/quorn-childrens-party-group-shot.jpg)">
+    <div class="container w-50 bg-secondary-subtle">
+        <h1 class="text-center  text-black bg-warning">Edit Details</h1>
+        <form (ngSubmit)="updateData()">
+            <input [(ngModel)]="rdetail.rname" class="text form-control m-2 p-2" type="text" name="Recname" placeholder="Recipename">
+    
+            <input [(ngModel)]="rdetail.no" class="text form-control m-2 p-2" type="text" id="no" name="no" placeholder="Number of serves">
+
+            <input [(ngModel)]="rdetail.dur" class="text form-control m-2 p-2" type="text" id="dur" name="number" placeholder="Prep time">
+    
+            <input [(ngModel)]="rdetail.img" class="text form-control m-2 p-2" type="no" id="image" name="image" placeholder="Image">
+
+            <input [(ngModel)]="rdetail.cat" class="text form-control m-2 p-2" type="text" id="cat" name="cat" placeholder="category">
+            
+            <textarea [(ngModel)]="rdetail.des"  class="text form-control m-2 p-2" type="text" id="desc" name="desc" placeholder="Recipe description"></textarea>
+    
+            <div class="text-end">
+                <button class="btn p-2" type="submit">Update</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
